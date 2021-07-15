@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  webpage-monitor:
+    container_name: webpage-monitor
+    build: .
+    environment:
+      - IFTTT_WEBHOOK_EVENT
+      - IFTTT_WEBHOOK_KEY
+    volumes:
+      - './watchlist.json:/watchlist.json'
+    restart: unless-stopped
